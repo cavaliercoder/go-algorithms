@@ -13,9 +13,10 @@ func testSort(t *testing.T, fn func([]int), n int) {
 }
 
 func testSortedArray(t *testing.T, a []int) {
+	// TODO: test that the expected values are all present
 	for i := 1; i < len(a); i++ {
 		if a[i] < a[i-1] {
-			t.Fatalf("Value at offset %v is less than the value at offset %v", i, i-1)
+			t.Fatalf("Value at offset %v/%v is less than the value at offset %v", i, len(a), i-1)
 		}
 	}
 }

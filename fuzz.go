@@ -1,4 +1,5 @@
 // +build gofuzz
+
 package algorithms
 
 import (
