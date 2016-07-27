@@ -7,11 +7,15 @@ but simply to practice while working my way through the third edition of
 
 Documentation is available on [godoc.org](https://godoc.org/github.com/cavaliercoder/go-algorithms).
 
-To test all algorithms for correctness with random input run
+To test all algorithms for correctness with pseudo-random input, run
 
-    $ go test -v
+    $ make test
+
+To test all algorithms for correctness repeatedly with fuzzed input, run:
+
+    $ make fuzz
 
 To benchmark all algorithms for best, worst and pseudo-random (hopefully 
 average) case, run:
 
-    $ go test -v -bench=. -benchtime=10s
+    $ make bench
