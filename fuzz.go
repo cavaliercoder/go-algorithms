@@ -9,12 +9,12 @@ func Fuzz(data []byte) int {
 	// insertion sort
 	a := getIntSlice(data)
 	InsertionSort(a)
-	testSortedArray(a)
+	panicOnUnsortedArray(a)
 
 	// selection sort
 	a = getIntSlice(data)
 	SelectionSort(a)
-	testSortedArray(a)
+	panicOnUnsortedArray(a)
 
 	return 1
 }
@@ -31,10 +31,10 @@ func getIntSlice(data []byte) []int {
 	return a
 }
 
-func testSortedArray(a []int) {
+func panicOnUnsortedArray(a []int) {
 	for i := 1; i < len(a); i++ {
 		if a[i] < a[i-1] {
-			panic(fmt.Errorf("Value at offset %v is less than the previous value", i))
+			panic(fmt.Errorf("Value at offset %v is less than the value at offset %v", i, i-1))
 		}
 	}
 }
